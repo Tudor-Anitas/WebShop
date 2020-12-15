@@ -1,0 +1,14 @@
+<%- include("../_partial/_header.ejs"); %>
+<h3>Hello there, <%-user.firstname%></h3>
+<div class="alert alert-primary" role="alert">
+    <h6>Email</h6>
+    <%-user.email%>
+</div>
+<div class="alert alert-primary" role="alert">
+      <h6>Address</h6>
+      <%-user.county%>, <%-user.city%>, <%-user.city_address%>
+</div>
+<div class="alert alert-danger" role="alert">
+    <a>Change account details</a>
+</div>
+<%- include("../_partial/_footer.ejs"); %>

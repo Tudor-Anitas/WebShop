@@ -33,10 +33,10 @@ router.get("/dashboard", function(req,res){
     console.log("dashboard");
     console.log(req.session);
     if(!req.session.user){
-        return res.status(401).send();
+        return res.status(301).redirect("/login");
     }
-
-    return res.status(200).send("Welcome user");
+    res.locals.user = req.session.user;
+    return res.status(200).render("home/dashboard");
 })
 
 module.exports = router;

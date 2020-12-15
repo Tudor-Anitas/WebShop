@@ -25,8 +25,8 @@ class Database{
 
     addUser(user){
         
-        let sql = "INSERT INTO users VALUES(?,?,?);";
-        let data = [user.username, user.password, user.email];
+        let sql = "INSERT INTO users VALUES(?,?,?,?,?,?,?,?);";
+        let data = [user.firstname, user.lastname, user.password, user.email, user.county, user.city, user.city_address, user.phone];
         
         
         this.connection.query(sql, data, function(err, result, fields){
@@ -42,10 +42,16 @@ class Database{
             // iterate in the result set to get the account information
             result.forEach(element => {
                 var user = {
-                    username: element.username,
+                    firstname: element.first_name,
+                    lastname: element.last_name,
                     email: element.email,
-                    password: element.password
+                    password: element.password,
+                    county: element.county,
+                    city: element.city,
+                    city_address: element.city_address,
+                    phone: element.phone
                 }
+
                 req.session.user = user;
             });
         });

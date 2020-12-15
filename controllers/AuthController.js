@@ -12,9 +12,13 @@ const register = (req, res, next) =>{
             throw err;
         }
         let user = new User({
-            username: req.body.username,
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
             email: req.body.email,
-            password: hash
+            password: hash,
+            county: req.body.county,
+            city: req.body.city,
+            phone: req.body.phone
         })
         req.session.user = user;
         let db = new Database();

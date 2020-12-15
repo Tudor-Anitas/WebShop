@@ -10,7 +10,11 @@
         <div class="panel-body">
             <form class="form-signin" method="POST" action="/signup">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" name="username" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control" placeholder="First name" name="firstname" aria-describedby="basic-addon1" required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Last name" name="lastname" aria-describedby="basic-addon1" required>
                 </div>
                 <br />
                 <div class="input-group">
@@ -30,7 +34,26 @@
                     <input type="password" class="form-control" placeholder="Re-password"
                         aria-describedby="basic-addon1" name="repassword" required>
                 </div>
- 
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="County" name="county"
+                        aria-describedby="basic-addon1" required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="City" name="city"
+                        aria-describedby="basic-addon1" required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="City Address" name="city_address"
+                        aria-describedby="basic-addon1" required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Phone" name="phone"
+                        aria-describedby="basic-addon1" required>
+                </div>
+                <br />
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
  
             </form>
