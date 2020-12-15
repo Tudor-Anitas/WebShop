@@ -1,0 +1,46 @@
+<%- include("../_partial/_header.ejs"); %>
+
+
+ 
+<div class="panel panel-default signup-div">
+ 
+    <div class="panel-heading">
+        <h3>Change account details</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-signin" method="POST" action="/modify">
+        
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock"
+                        aria-hidden="true"></span></span>
+                <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" >
+            </div>
+            <br />
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="County" name="county"
+                    aria-describedby="basic-addon1" >
+            </div>
+            <br />
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="City" name="city"
+                    aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="City Address" name="city_address"
+                    aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Phone" name="phone"
+                    aria-describedby="basic-addon1" >
+            </div>
+            <br />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include("../_partial/_footer.ejs"); %>

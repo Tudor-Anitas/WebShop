@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 // import the classes Database and User
 var Database = require('../../models/Database.js');
 const AuthController = require('../../controllers/AuthController.js')
-
+const AccountInfo = require("../../controllers/AccountInfo.js");
 // app/json parser
 var jsonParser = bodyParser.json();
 // urlencoded parser
@@ -38,5 +38,15 @@ router.get("/dashboard", function(req,res){
     res.locals.user = req.session.user;
     return res.status(200).render("home/dashboard");
 })
+router.get("/modify", function(req,res){
+    
+    if(!req.session.user){
+        return res.status(301).redirect("/login");
+    }
+    console.log("Modify get");
+    
+    return res.status(200).render("home/modify")
+})
+router.post("/modify", urlencodedParser, AccountInfo.changeDetails)
 
 module.exports = router;

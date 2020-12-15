@@ -77,6 +77,32 @@ class Database{
             });
         });
     }
+
+    changePassword(email, newPassword){
+        this.connection.query("UPDATE users SET password = '" + newPassword + "' WHERE email ='" + email + "';", function(err,result){
+            if(err) throw err;
+        })
+    }
+    changeCounty(email, newCounty){
+        this.connection.query("UPDATE users SET county = '" + newCounty + "' WHERE email ='" + email + "';", function(err,result){
+            if(err) throw err;
+        })
+    }
+    changeCity(email, newCity){
+        this.connection.query("UPDATE users SET city = '" + newCity + "' WHERE email ='" + email + "';", function(err,result){
+            if(err) throw err;
+        })
+    }
+    changeCityAddress(email, newAddress){
+        this.connection.query("UPDATE users SET city_address = '" + newAddress + "' WHERE email ='" + email + "';", function(err,result){
+            if(err) throw err;
+        })
+    }
+    changePhone(email, newPhone){
+        this.connection.query("UPDATE users SET phone = '" + newPhone + "' WHERE email ='" + email + "';", function(err,result){
+            if(err) throw err;
+        })
+    }
     showUsers(){
         this.connection.query("SELECT * FROM users" , function(err, result, fields){
             if(err) throw err;
