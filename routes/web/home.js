@@ -49,4 +49,7 @@ router.get("/modify", function(req,res){
 })
 router.post("/modify", urlencodedParser, AccountInfo.changeDetails)
 
+router.get("/clothing/hoodies", function(req,res){
+    res.status(200).render("home/clothing/hoodies");
+})
 module.exports = router;
