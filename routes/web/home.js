@@ -19,7 +19,7 @@ router.get("/", function(req,res){
     console.log("Start page :)")
     res.render("home/");
 })
-
+// ________________________________________ User account 
 router.get("/login", function(req,res){
     res.render("home/login")
 })
@@ -51,9 +51,83 @@ router.get("/modify", function(req,res){
 })
 router.post("/modify", urlencodedParser, AccountInfo.changeDetails)
 
+// ________________________________________________ Subcategories of items
+
+// _____________________ Clothing
 router.get("/clothing/hoodies", function(req,res){
     let db = new Database();
-    db.showSubCategory('clothing','hoodies',res);
-    
+    db.showSubCategory('clothing','hoodies',res);   
+})
+router.get("/clothing/tshirts", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','tshirts',res);
+})
+router.get("/clothing/jeans", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','jeans',res);
+})
+router.get("/clothing/pants", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','pants',res);
+})
+router.get("/clothing/shorts", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','shorts',res);
+})
+router.get("/clothing/hats", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','hats',res);
+})
+router.get("/clothing/street-jackets", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','street-jacket',res);
+})
+router.get("/clothing/rain-jackets", function(req,res){
+    let db = new Database();
+    db.showSubCategory('clothing','rain-jacket',res);
+})
+
+// _____________________ Shoes
+router.get("/shoes/skate-shoes", function(req,res){
+    let db = new Database();
+    db.showSubCategory('shoes','skate-shoes',res);
+})
+router.get("/shoes/slip-ones", function(req,res){
+    let db = new Database();
+    db.showSubCategory('shoes','slip-ones',res);
+})
+router.get("/shoes/sneakers", function(req,res){
+    let db = new Database();
+    db.showSubCategory('shoes','sneakers',res);
+})
+router.get("/shoes/snowboard-boots", function(req,res){
+    let db = new Database();
+    db.showSubCategory('shoes','snowboard-boots',res);
+})
+router.get("/shoes/ski-boots", function(req,res){
+    let db = new Database();
+    db.showSubCategory('shoes','ski-boots',res);
+})
+
+// _____________________ Accessories
+router.get("/accessories/sunglasses", function(req,res){
+    let db = new Database();
+    db.showSubCategory('accessories','sunglasses',res);
+})
+router.get("/accessories/backpacks", function(req,res){
+    let db = new Database();
+    db.showSubCategory('accessories','backpacks',res);
+})
+router.get("/accessories/belts", function(req,res){
+    let db = new Database();
+    db.showSubCategory('accessories','belts',res);
+})
+router.get("/accessories/socks", function(req,res){
+    let db = new Database();
+    db.showSubCategory('accessories','socks',res);
+})
+router.get("/accessories/wallets", function(req,res){
+    let db = new Database();
+    db.showSubCategory('accessories','wallets',res);
 })
 module.exports = router;
