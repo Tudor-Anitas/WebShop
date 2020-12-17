@@ -2,6 +2,8 @@
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const User = require('./User');
+const fs = require('fs');
+const { response } = require('express');
 
 class Database{
 
@@ -109,7 +111,17 @@ class Database{
             console.log(result);
         })
     }
-    
+    // returns all the products from a subcategory from the database
+    showSubCategory(category, subcategory, res){
+        this.connection.query("SELECT * FROM products WHERE subcategory = '" + subcategory + "';" , function(err, result, fields){
+            if(err) throw err;
+            else{
+                // render the specified subcategory with the results from the database
+                res.render("home/" + category + "/" + subcategory,
+                {details: result});
+            }
+        })
+    }    
 }
 
 module.exports = Database;

@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var Database = require('../../models/Database.js');
 const AuthController = require('../../controllers/AuthController.js')
 const AccountInfo = require("../../controllers/AccountInfo.js");
+const { connection } = require("mongoose");
+const { db } = require("../../models/User.js");
 // app/json parser
 var jsonParser = bodyParser.json();
 // urlencoded parser
@@ -50,6 +52,8 @@ router.get("/modify", function(req,res){
 router.post("/modify", urlencodedParser, AccountInfo.changeDetails)
 
 router.get("/clothing/hoodies", function(req,res){
-    res.status(200).render("home/clothing/hoodies");
+    let db = new Database();
+    db.showSubCategory('clothing','hoodies',res);
+    
 })
 module.exports = router;

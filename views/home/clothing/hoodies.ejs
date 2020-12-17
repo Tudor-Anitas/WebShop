@@ -1,4 +1,19 @@
 <%- include("../../_partial/_header.ejs"); %>
-hoodies here
 
+    <% if(details!=null) { %>
+    <table>
+    <tr>
+        <th>brand</th>
+        <th>name </th>
+        <th>price</th>
+    </tr>
+    <% details.forEach(function(item){ %>
+    <tr>
+        <td><%= item.brand%></td>
+        <td><%= item.name%></td>
+        <td><%= item.price%></td>   
+    </tr>
+    <% }) %>
+    </table>
+    <% } %>
 <%- include("../../_partial/_footer.ejs"); %>
